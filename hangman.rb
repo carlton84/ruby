@@ -1,6 +1,6 @@
 
 words = %w"rambutan nenas mangga tomato epal jagung limau oren kelapa "
-total_chances = 5
+total_chances = 10
 wrong_try = 0
 right_guess = ''
 
@@ -20,8 +20,7 @@ ____|_____
 WIN
 
 
-word = words[rand(words.length) - 1]
-
+word = words.sample
 
 def get_placeholder sample_word, guessed_words
   placeholder = ''
@@ -59,7 +58,7 @@ while true
       break
     end
   else
-    puts "Sorry! The word dosen't contains '#{char}'"
+    puts "Sorry! The word doesn't contains '#{char}'"
     wrong_try += 1
 
     if (wrong_try == total_chances)
