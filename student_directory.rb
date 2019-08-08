@@ -7,6 +7,19 @@ def data_input
   end
 end
 
+def prompt_entry
+  puts "do you want to add more student?"
+  puts "Y - Yes"
+  puts "N - No"
+
+  answer = gets.chomp
+  if answer.upcase == "Y"
+    user_input_msg
+  else
+    exit
+  end
+end
+
 
 def input_students_msg
   puts "Please enter student name"
@@ -23,7 +36,6 @@ def input_gender_msg
   puts "To finish, just hit return"
 end
 
-# loop do
 
 def user_input_msg
   input_students_msg
@@ -38,20 +50,8 @@ def user_input_msg
   @students << {name: name, age: age, gender: gender}
   puts "Now we have #{@students.count} students"
   data_input
+  prompt_entry
 end
 
-# def prompt_entry
-#   puts "do you want to add more student?"
-#   puts "Y - Yes"
-#   puts "N - No"
-#
-#   answer = gets.chomp
-#   if answer == Y
-#     user_input_msg
-#   else
-#     exit
-#    end
- # end
-# end
 user_input_msg
 print(@students)
